@@ -1,0 +1,5 @@
+E:\GITHUB\Money-Tracker\Money-Tracker\ValueTypeCasting\bin\Debug\ValueTypeCasting.dll
+E:\GITHUB\Money-Tracker\Money-Tracker\ValueTypeCasting\bin\Debug\ValueTypeCasting.pdb
+E:\GITHUB\Money-Tracker\Money-Tracker\ValueTypeCasting\obj\Debug\ValueTypeCasting.dll
+E:\GITHUB\Money-Tracker\Money-Tracker\ValueTypeCasting\obj\Debug\ValueTypeCasting.pdb
+E:\GITHUB\Money-Tracker\Money-Tracker\ValueTypeCasting\obj\Debug\ValueTypeCasting.csprojResolveAssemblyReference.cache
