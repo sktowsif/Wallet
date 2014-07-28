@@ -18,5 +18,14 @@ namespace Money_Tracker.Websites
             int intUserID = objUser.IsValidLogin(objCred);
             return intUserID;
         }
+
+        protected void btn_login_Click(object sender, EventArgs e)
+        {
+        //    string strEmail=txt_email.Text;
+        //    string strPwd = txt_pwd.Text;
+        //    object[] objLoginUser = new object[] { strEmail, strPwd };
+        //    User objUser = new User();
+        //    Session["UserID"] = objUser.IsValidLogin(objLoginUser);
+        }
     }
 }

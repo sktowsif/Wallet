@@ -397,6 +397,7 @@ label.panel-label:hover {
     margin: 0 auto;
   }
 }
+
 .panel-radios {
   position: fixed;
   left: 50%;
@@ -405,6 +406,7 @@ label.panel-label:hover {
   opacity: 0.5;
   z-index: 99;
 }
+
 .panel-radios:nth-child(1) {
   -webkit-transform: translateX(-50px);
   -ms-transform: translateX(-50px);
@@ -447,7 +449,7 @@ body {
 #introduction {
   width: 90%;
   margin: 0 auto;
-  padding: 48px 24px;
+  /*padding: 48px 24px;*/
   color: white;
 }
 #introduction h1 {

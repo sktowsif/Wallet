@@ -12,7 +12,6 @@
     <script src="../script/scriptLogin.js"></script>
 </head>
 <body>
-
     <form id="formlogin">
         <div id="divLogin">
             <div id="divHeading">

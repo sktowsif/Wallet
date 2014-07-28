@@ -1,21 +1,14 @@
 ﻿$(document).ready(function () {
-
-    $('#rdoHide').hide();
-
+    $('.panel-radios').hide();
     Waves.displayEffect();
     $('.styleSlider').ftext();
-    $('.ddl').selectOrDie({
-        
-    });
+    $('.ddl').selectOrDie();
 
     $('#btn_logout').click(function () {
         var und;
         $.session.set('userID', "null");
         window.location.replace('Home.aspx');
     })
-
-    //ajaxCaller("Helper.asmx/GetIncomeTypeList", "{}", BindIncome, FailureCall);
-    //ajaxCaller("Helper.asmx/GetExpenseTypeList", "{}", BindExpense, FailureCall);
 });
 
 // BASIC AJAX CALL METHOD

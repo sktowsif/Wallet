@@ -17,7 +17,7 @@
             insertIncome(userID);
             ajaxCaller("Helper.asmx/GetBalance", "{intId:" + userID + "}", SuccessBal, FailureCall);
         } else {
-            ShowNotification('<p>Amount should be numeric.</p>');
+            ShowNotification('<p>Enter correct amount.</p>');
         }
     });
 
@@ -111,4 +111,11 @@ function SuccessCallInc() {
     //alert("Ok");
     $(".manageContainer")[0].reset();
     $(".manageContainer")[1].reset();
+}
+
+function ResetIncomeExpense() {
+    $('#txt_amtIncome').val('0.00');
+    $("#txt_noteIncome").val('Type here');
+    $('#txt_amtIncome').val('0.00');
+    $("#txt_noteIncome").val('Type here');
 }

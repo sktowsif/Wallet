@@ -11,7 +11,11 @@ namespace Money_Tracker.Websites
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //hdnId.Value = Session["UserId"].ToString();
+            //int ID;
+            //int.TryParse(hdnId.Value, out ID);
+            //if (ID < 0)
+            //    Response.Redirect("Home.aspx");
         }
     }
 }

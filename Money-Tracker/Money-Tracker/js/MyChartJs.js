@@ -12,8 +12,6 @@
     $("#sltMonth").change(function () {
         ajaxCaller("Helper.asmx/GetWeeks", "{}", SuccessCallWeeks, FailureCall);
     });
-    $("#sltWeek").change(function () {
-    });
 
     $('#btn_year').click(function () {
         ajaxCaller("Helper.asmx/GetYearData", "{intId:" + userID + ",intYear:" + $("#sltYear option:selected").text() + "}", SuccessCallY, FailureCall);
@@ -70,6 +68,7 @@ function SuccessMonth(data) {
     BindDropDown("#sltMonth", Type, "MonthName", "Id");
 }
 function BindDropDown(selector, data, dataMember, valueMember) {
+    $(selector).empty();
     for (var obj in data) {
         $(selector).append("<option value=" + data[obj][valueMember] + ">" + data[obj][dataMember] + "</option>")
     }

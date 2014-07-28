@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
+<head>
     <title>Home</title>
     <script src="../script/jquery-1.11.1.js"></script>
     <script src="../script/jquery.session.min.js"></script>
@@ -54,6 +54,7 @@
 </head>
 <body>
     <div id="divBody">
+        
         <!-- TAB CONTROLLERS -->
         <input id="panel-1-ctrl"
             class="panel-radios rdoHide" type="radio" name="tab-radios" checked="checked" />
@@ -71,11 +72,6 @@
         <header id="introduction">
             <h1>Money Tracker</h1>
         </header>
-
-        <div>
-            <button id="btn_logout" class="waves-effect waves-button waves-light waves-float" style="background: #488AC7;color: #fff;">Log out</button> 
-        </div>
-
 
         <!-- TABS LIST -->
         <ul id="tabs-list">
@@ -118,6 +114,9 @@
             <div id="container">
                 <section id="panel-1">
                     <main>
+                        <div>
+                            <button id="btn_logout" class="waves-effect waves-button waves-light waves-float" style="background: #488AC7;color: #fff;">Log out</button> 
+                        </div>
                         <h1>Home</h1>
                         <p>Welcome Towsif Hossain,</p>
                         <p>Show the current balance and expenditure</p>
