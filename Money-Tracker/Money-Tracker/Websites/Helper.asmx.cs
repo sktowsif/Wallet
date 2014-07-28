@@ -160,8 +160,10 @@ namespace Money_Tracker.Websites
         [WebMethod]
         public void ExportToXL(int intId)
         {
-            ExportToXL objEXL = new ExportToXL();
-            objEXL.Export(intId);
+            ExportToXL objExport = new ExportToXL();
+            int intRandom=objExport.Export(intId);
+            MainPage objMainPage = new MainPage();
+            objMainPage.Download(intRandom);
         }
 
         [WebMethod]

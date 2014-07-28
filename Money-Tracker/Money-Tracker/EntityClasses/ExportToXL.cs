@@ -6,6 +6,10 @@ using System.Linq;
 using System.Web;
 using ValueTypeCasting;
 using Microsoft.Office.Interop.Excel;
+using System.IO;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
 namespace Money_Tracker.EntityClasses
 {
     public class ExportToXL
@@ -15,8 +19,11 @@ namespace Money_Tracker.EntityClasses
         public decimal Balance { get; set; }
         public DateTime Date { get; set; }
 
-        public void Export(int intId)
+       
+        public int Export(int intId)
         {
+            Random objRandom = new Random();
+            int intRandom = objRandom.Next(1000, 100000000);
             string[] strColValues = { "User_Id" };
             object[] objArrColValues = { intId };
             SqlConLib objSqlConLib = new SqlConLib(Properties.Settings.Default.ConnectionString);
@@ -69,7 +76,7 @@ namespace Money_Tracker.EntityClasses
                 workSheet.Range["A1"].AutoFormat(Microsoft.Office.Interop.Excel.XlRangeAutoFormat.xlRangeAutoFormatClassic1);
 
                 // Define filename
-                string fileName = string.Format(@"{0}\ExcelData.xlsx", Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory));
+                string fileName = string.Format(@"{0}\ExcelData"+intRandom+".xlsx", @"C:\Users\Swathi Manindra\Documents\GitHub\Wallet\Money-Tracker\Money-Tracker\Downloads");
 
                 // Save this data as a file
                 workSheet.SaveAs(fileName);
@@ -102,6 +109,7 @@ namespace Money_Tracker.EntityClasses
                 // Force garbage collector cleaning
                 GC.Collect();
             }
+            return intRandom;
         }
     }
 }
