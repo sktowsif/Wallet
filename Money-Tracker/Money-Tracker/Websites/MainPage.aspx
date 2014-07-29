@@ -19,14 +19,14 @@
     <script src="../script/homeScript/selectordie.min.js"></script>
     <script src="../script/homeScript/waves.min.js"></script>
     <script src="../script/homeScript/homescript.js"></script>
-    
+
     <%-- NOTIFICATION PLUGIN --%>
     <link href="../css/notification/ns-style-attached.css" rel="stylesheet" />
     <link href="../css/notification/ns-style-growl.css" rel="stylesheet" />
     <script src="../script/Notification/classie.js"></script>
     <script src="../script/Notification/modernizr.custom.js"></script>
     <script src="../script/Notification/notificationFx.js"></script>
-   
+
     <%-- NOTY --%>
     <script src="../script/jquery.noty.packaged.min.js"></script>
 
@@ -36,7 +36,7 @@
     <script src="../script/lib/moment.min.js"></script>
     <script src="../script/lib/jquery-ui.custom.min.js"></script>
     <script src="../script/fullcalendar.min.js"></script>
-    <script src="../script/calendarScript.js"></script>
+
 
     <%-- CHART PLUGIN --%>
     <link href="../Jqplot/jquery.jqplot.min.css" rel="stylesheet" />
@@ -50,85 +50,90 @@
     <%-- CUSTOM --%>
     <script src="../MyScripts/scriptIncomeExpense.js"></script>
     <script src="../js/MyChartJs.js"></script>
+    <script src="../script/calendarScript.js"></script>
 
+    <%--popup--%>
 </head>
 <body>
-    <div id="divBody">
-        
-        <!-- TAB CONTROLLERS -->
-        <input id="panel-1-ctrl"
-            class="panel-radios rdoHide" type="radio" name="tab-radios" checked="checked" />
-        <input id="panel-2-ctrl"
-            class="panel-radios rdoHide" type="radio" name="tab-radios" />
-        <input id="panel-3-ctrl"
-            class="panel-radios rdoHide" type="radio" name="tab-radios" />
-        <input id="panel-4-ctrl"
-            class="panel-radios rdoHide" type="radio" name="tab-radios" />
-        <input id="panel-5-ctrl"
-            class="panel-radios rdoHide" type="radio" name="tab-radios" />
-        <input id="nav-ctrl"
-            class="panel-radios rdoHide" type="checkbox" name="nav-checkbox" />
+    <form id="form1" runat="server">
+        <div id="divBody">
 
-        <header id="introduction">
-            <h1>Money Tracker</h1>
-        </header>
+            <!-- TAB CONTROLLERS -->
+            <input id="panel-1-ctrl"
+                class="panel-radios rdoHide" type="radio" name="tab-radios" checked="checked" />
+            <input id="panel-2-ctrl"
+                class="panel-radios rdoHide" type="radio" name="tab-radios" />
+            <input id="panel-3-ctrl"
+                class="panel-radios rdoHide" type="radio" name="tab-radios" />
+            <input id="panel-4-ctrl"
+                class="panel-radios rdoHide" type="radio" name="tab-radios" />
+            <input id="panel-5-ctrl"
+                class="panel-radios rdoHide" type="radio" name="tab-radios" />
+            <input id="nav-ctrl"
+                class="panel-radios rdoHide" type="checkbox" name="nav-checkbox" />
 
-        <!-- TABS LIST -->
-        <ul id="tabs-list">
-            <!-- MENU TOGGLE-->
-            <label id="open-nav-label" for="nav-ctrl"></label>
-            <li id="li-for-panel-1">
-                <label class="panel-label"
-                    for="panel-1-ctrl">
-                    Home</label>
-            </li>
-            <!--INLINE-BLOCK FIX-->
-            <li id="li-for-panel-2">
-                <label class="panel-label"
-                    for="panel-2-ctrl">
-                    Income</label>
-            </li>
-            <!--INLINE-BLOCK FIX-->
-            <li id="li-for-panel-3">
-                <label class="panel-label"
-                    for="panel-3-ctrl">
-                    Expense</label>
-            </li>
-            <!--INLINE-BLOCK FIX-->
-            <li id="li-for-panel-4">
-                <label class="panel-label"
-                    for="panel-4-ctrl">
-                    Chart</label>
-            </li>
-            <!--INLINE-BLOCK FIX-->
-            <li id="li-for-panel-5">
-                <label class="panel-label"
-                    for="panel-5-ctrl">
-                    Calendar</label>
-            </li>
-            <label id="close-nav-label" for="nav-ctrl">Close</label>
-        </ul>
+            <header id="introduction">
+                <h1>Money Tracker</h1>
+            </header>
 
-        <!--THE PANELS-->
-        <article id="panels">
-            <div id="container">
-                <section id="panel-1">
-                    <main>
+            <!-- TABS LIST -->
+            <ul id="tabs-list">
+                <!-- MENU TOGGLE-->
+                <label id="open-nav-label" for="nav-ctrl"></label>
+                <li id="li-for-panel-1">
+                    <label class="panel-label"
+                        for="panel-1-ctrl">
+                        Home</label>
+                </li>
+                <!--INLINE-BLOCK FIX-->
+                <li id="li-for-panel-2">
+                    <label class="panel-label"
+                        for="panel-2-ctrl">
+                        Income</label>
+                </li>
+                <!--INLINE-BLOCK FIX-->
+                <li id="li-for-panel-3">
+                    <label class="panel-label"
+                        for="panel-3-ctrl">
+                        Expense</label>
+                </li>
+                <!--INLINE-BLOCK FIX-->
+                <li id="li-for-panel-4">
+                    <label class="panel-label"
+                        for="panel-4-ctrl">
+                        Chart</label>
+                </li>
+                <!--INLINE-BLOCK FIX-->
+                <li id="li-for-panel-5">
+                    <label class="panel-label"
+                        for="panel-5-ctrl">
+                        Calendar</label>
+                </li>
+                <label id="close-nav-label" for="nav-ctrl">Close</label>
+            </ul>
+
+            <!--THE PANELS-->
+            <article id="panels">
+                <div id="container">
+                    <section id="panel-1">
+                        <main>
                         <div>
                             <button id="btn_logout" class="waves-effect waves-button waves-light waves-float" style="background: #488AC7;color: #fff;">Log out</button> 
                         </div>
-                        <h1>Home</h1>
-                        <p>Welcome Towsif Hossain,</p>
-                        <p>Show the current balance and expenditure</p>
+                        <h1>Welcome</h1>
+                        <p><label id="lblName"></label></p>
+                        <p >Your current balance is : $ <label id="lblBalance" style="color:green"></label></p>
                         <div>
-                            <button id="btn_export" class="waves-effect waves-button waves-light waves-float" style="background: #488AC7;color: #fff;">Export</button> 
+                            <asp:Button ID="btnExport" runat="server" cssClass="waves-effect waves-button waves-light waves-float" style="background: #488AC7;color: #fff;" Text="Download" OnClick="btnExport_Click"></asp:Button>
+                            <%--<button id="btn_export" class="waves-effect waves-button waves-light waves-float" style="background: #488AC7;color: #fff;">Export</button>--%>
+                            <asp:HiddenField ID="hfUserId" runat="server" />
                         </div>
                     </main>
-                </section>
+                    </section>
 
-                <!--INCOME-->
-                <section id="panel-2">
-                    <main>
+                    <!--INCOME-->
+                    <section id="panel-2">
+                        <main>
                         <h1>Income</h1>
                         <div class="manageContainer">
                             <select id="ddlIncCategory" class="ddl" data-custom-id="custom" data-custom-class="custom">
@@ -142,11 +147,11 @@
                         </div>
 
                     </main>
-                </section>
+                    </section>
 
-                <!--EXPENSE-->
-                <section id="panel-3">
-                    <main>
+                    <!--EXPENSE-->
+                    <section id="panel-3">
+                        <main>
                         <h1>Expense</h1>
                         <div class="manageContainer">
                             <select id="ddlExpCategory" class="ddl" data-custom-id="custom" data-custom-class="custom">
@@ -159,20 +164,19 @@
                             </div>
                         </div>
                     </main>
-                </section>
+                    </section>
 
-                <!--CHART-->
-                <section id="panel-4">
-                    <main>
+                    <!--CHART-->
+                    <section id="panel-4">
+                        <main>
                         <h1>Chart</h1>
                         <div class="manageContainer">
                             
-                            <div id="chatWide">
                                 <div>
                                     <select id="sltYear" class="ddl" data-custom-id="custom" data-custom-class="custom">
                                         <option value="-1">Select year...</option>
                                     </select>
-                                    <button id="btn_year" class="waves-effect waves-button waves-light waves-float" style="background: #488AC7;color: #fff;">Show</button> 
+                                                <button id="btn_year" class="waves-effect waves-button waves-light waves-float md-trigger" data-modal="modal-1" style="background: #488AC7;color: #fff;">Show</button> 
                                 </div>
                                 <div>
                                     <select id="sltMonth" class="ddl" data-custom-id="custom" data-custom-class="custom">
@@ -186,27 +190,27 @@
                                     </select>
                                     <button id="btn_week" class="waves-effect waves-button waves-light waves-float" style="background: #488AC7;color: #fff;">Show</button> 
                                 </div>
-                                <div id="Inc" style="height:300px;width:300px">
+				                 
+                                        <div id="Inc" style="height:300px;width:300px">
                                     
-                                </div>
-                                <div id="Exp"></div>
-                        </div>
+                                        </div>
                         </div>
                     </main>
-                </section>
+                    </section>
 
-                <!--CALENDAR-->
-                <section id="panel-5">
-                    <main>
+                    <!--CALENDAR-->
+                    <section id="panel-5">
+                        <main>
                         <h1>Calendar</h1>
                         <div id="calendar">
                         </div>
                     </main>
-                </section>
+                    </section>
 
-            </div>
-        </article>
+                </div>
+            </article>
 
-    </div>
+        </div>
+    </form>
 </body>
 </html>

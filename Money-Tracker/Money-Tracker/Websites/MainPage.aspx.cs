@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Money_Tracker.EntityClasses;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ValueTypeCasting;
 
 namespace Money_Tracker.Websites
 {
@@ -27,6 +29,13 @@ namespace Money_Tracker.Websites
             //int.TryParse(hdnId.Value, out ID);
             //if (ID < 0)
             //    Response.Redirect("Home.aspx");
+        }
+
+        protected void btnExport_Click(object sender, EventArgs e)
+        {
+            ExportToXL objExport = new ExportToXL();
+            int intRandom=objExport.Export(TypeTranslation.GetInt(hfUserId.Value));
+            Download(intRandom);
         }
     }
 }

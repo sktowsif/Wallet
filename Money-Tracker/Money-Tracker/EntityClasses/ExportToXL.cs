@@ -19,7 +19,7 @@ namespace Money_Tracker.EntityClasses
         public decimal Balance { get; set; }
         public DateTime Date { get; set; }
 
-       
+
         public int Export(int intId)
         {
             Random objRandom = new Random();
@@ -27,7 +27,7 @@ namespace Money_Tracker.EntityClasses
             string[] strColValues = { "User_Id" };
             object[] objArrColValues = { intId };
             SqlConLib objSqlConLib = new SqlConLib(Properties.Settings.Default.ConnectionString);
-            System.Data.DataTable dtTable = objSqlConLib.SelectQuery("Select Income,Date,Expense,Balance from IncomeExpense Where User_id=@User_id", strColValues, objArrColValues);
+            System.Data.DataTable dtTable = objSqlConLib.SelectQuery("Select Income,Date,Expense,Balance from IncomeExpense Where User_id=@User_id order by date", strColValues, objArrColValues);
             List<ExportToXL> lstEXL = new List<ExportToXL>();
             for (int i = 0; i < dtTable.Rows.Count; i++)
             {
@@ -76,7 +76,7 @@ namespace Money_Tracker.EntityClasses
                 workSheet.Range["A1"].AutoFormat(Microsoft.Office.Interop.Excel.XlRangeAutoFormat.xlRangeAutoFormatClassic1);
 
                 // Define filename
-                string fileName = string.Format(@"{0}\ExcelData"+intRandom+".xlsx", @"C:\Users\Swathi Manindra\Documents\GitHub\Wallet\Money-Tracker\Money-Tracker\Downloads");
+                string fileName = string.Format(@"{0}\ExcelData" + intRandom + ".xlsx", @"C:\Users\Swathi Manindra\Documents\GitHub\Wallet\Money-Tracker\Money-Tracker\Downloads");
 
                 // Save this data as a file
                 workSheet.SaveAs(fileName);
