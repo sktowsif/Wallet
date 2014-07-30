@@ -19,7 +19,7 @@ function ajaxCall(url,dataToSend,SuccessCallBack,ErrorCallBack) {
 }
 
 function ErrorCallBack(xhr,msg,exception) {
-    alert(msg);
+   // alert(msg);
 }
 
 // On Success Call

@@ -33,7 +33,7 @@
 function SuccessCallM(data) {
     if (data.d.length == 0)
     {
-        alert("Sorry Their is No Income or Expense in This Month");
+        ShowMessage("Sorry Their is No Income or Expense in This Month", "information");
     }
     var value = data;
     var day = "Day";
@@ -51,9 +51,16 @@ function SuccessCallYears(data) {
     var Type = data.d;
     BindDropDown("#sltYear", Type, "Years", "Id");
 }
+function ShowMessage(msg, type) {
+    var n = noty({
+        text: msg,
+        type: type,
+        timeout: 3000,
+    })
+}
 function SuccessCallY(data){
     if (data.d.length == 0) {
-        alert("Sorry Their is No Income or Expense in This Year");
+        ShowMessage("Sorry Their is No Income or Expense in This Year",'information');
     }
     var value = data;
     var day = "MonthName";
@@ -164,7 +171,7 @@ function SuccessCallAll(data) {
 }
 function SuccessCallW(data) {
     if (data.d.length == 0)
-        alert("Sorry Their is No Income or Expense in This Week");
+        ShowMessage("Sorry Their is No Income or Expense in This Week", 'information');
     var value = data;
     var day = "Day";
     var x = "day";

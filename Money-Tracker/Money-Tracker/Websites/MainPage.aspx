@@ -7,7 +7,7 @@
     <title>Home</title>
     <script src="../script/jquery-1.11.1.js"></script>
     <script src="../script/jquery.session.min.js"></script>
-
+    <link href="../css/slide.css" rel="stylesheet" />
     <link href="../css/homeCSS/homeStyle.css" rel="stylesheet" />
     <link href="../css/homeCSS/selectordie.css" rel="stylesheet" />
     <link href="../css/homeCSS/menu.css" rel="stylesheet" />
@@ -123,6 +123,7 @@
                         <h1>Welcome</h1>
                         <p><label id="lblName"></label></p>
                         <p >Your current balance is : $ <label id="lblBalance" style="color:green"></label></p>
+                            <p>Click Below to Download Total Details of Income and Expense in Excel Format</p>
                         <div>
                             <asp:Button ID="btnExport" runat="server" cssClass="waves-effect waves-button waves-light waves-float" style="background: #488AC7;color: #fff;" Text="Download" OnClick="btnExport_Click"></asp:Button>
                             <%--<button id="btn_export" class="waves-effect waves-button waves-light waves-float" style="background: #488AC7;color: #fff;">Export</button>--%>
@@ -212,5 +213,13 @@
 
         </div>
     </form>
+    <div class="center">
+        <p style="color:white">© 2014 Money Tracker, Inc. All Rights Reserved. Privacy Policy/ Privacy Rights Terms of Use</p>
+    </div>
+    <div class="social">
+      <a href="http://www.facebook.com"><img src="../Image/facebook.png" /></a>
+      <a href="http://www.linkedin.com"><img src="../Image/linkedin.png" /></a>
+      <a href="http://www.twitter.com"><img src="../Image/twitter.png" /></a>
+        </div>
 </body>
 </html>

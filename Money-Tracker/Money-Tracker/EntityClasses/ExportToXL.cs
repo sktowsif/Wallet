@@ -27,7 +27,7 @@ namespace Money_Tracker.EntityClasses
             string[] strColValues = { "User_Id" };
             object[] objArrColValues = { intId };
             SqlConLib objSqlConLib = new SqlConLib(Properties.Settings.Default.ConnectionString);
-            System.Data.DataTable dtTable = objSqlConLib.SelectQuery("Select Income,Date,Expense,Balance from IncomeExpense Where User_id=@User_id order by date", strColValues, objArrColValues);
+            System.Data.DataTable dtTable = objSqlConLib.SelectQuery("Select Income,Date,Expense,Balance from IncomeExpense Where User_id=@User_id order by id", strColValues, objArrColValues);
             List<ExportToXL> lstEXL = new List<ExportToXL>();
             for (int i = 0; i < dtTable.Rows.Count; i++)
             {
