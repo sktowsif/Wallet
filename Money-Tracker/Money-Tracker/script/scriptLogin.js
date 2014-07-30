@@ -42,7 +42,7 @@ function SuccessValidUser(data) {
 
 // Called whr=en error is encountered by ajax call
 function ErrorCallBack(xhr,msg,exception) {
-    alert(msg);
+   // alert(msg);
 }
 
 // To generate noty messages

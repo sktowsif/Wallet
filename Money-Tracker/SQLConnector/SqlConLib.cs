@@ -10,7 +10,7 @@ namespace SqlConnectorLib
 {
     public class SqlConLib
     {
-         string  _strConnection;
+        string _strConnection;
         SqlConnection _objSC;
         public SqlConLib(string strConnection)
         {
@@ -23,7 +23,7 @@ namespace SqlConnectorLib
             {
                 _objSC = new SqlConnection(_strConnection);
             }
-            if(_objSC.State != ConnectionState.Open)
+            if (_objSC.State != ConnectionState.Open)
                 _objSC.Open();
         }
 
@@ -52,10 +52,10 @@ namespace SqlConnectorLib
             OpenConnection();
             SqlCommand objSqlComm = new SqlCommand(strQuery, _objSC);
             for (int i = 0; i < strArrColNames.Length; i++)
-			{
-                objSqlComm.Parameters.AddWithValue(strArrColNames[i], objArrColValues[i]);    
-			}
-            
+            {
+                objSqlComm.Parameters.AddWithValue(strArrColNames[i], objArrColValues[i]);
+            }
+
             if (objSqlComm.ExecuteNonQuery() > 0)
                 blnRetVal = true;
 
@@ -72,20 +72,30 @@ namespace SqlConnectorLib
         /// <returns></returns>
         public DataTable SelectQuery(string strQuery, string[] strArrColNames, object[] objArrColValues)
         {
-            if (strArrColNames.Length != objArrColValues.Length)
-                return null;
             
-            OpenConnection();
-            SqlCommand objSqlComm = new SqlCommand(strQuery,_objSC);
-            for (int i = 0; i < strArrColNames.Length; i++)
+                if (strArrColNames.Length != objArrColValues.Length)
+                    return null;
+
+                OpenConnection();
+                SqlCommand objSqlComm = new SqlCommand(strQuery, _objSC);
+                for (int i = 0; i < strArrColNames.Length; i++)
+                {
+                    objSqlComm.Parameters.AddWithValue(strArrColNames[i], objArrColValues[i]);
+                }
+                SqlDataAdapter sdaExecute = new SqlDataAdapter(objSqlComm);
+                DataTable dtRetVal = new DataTable();
+            try
             {
-                objSqlComm.Parameters.AddWithValue(strArrColNames[i], objArrColValues[i]);
-            }
-            SqlDataAdapter sdaExecute = new SqlDataAdapter(objSqlComm);
-            DataTable dtRetVal = new DataTable();
             sdaExecute.Fill(dtRetVal);
-            CloseConnection();
-            return dtRetVal;
+                CloseConnection();
+                return dtRetVal;
+            }
+            catch
+            {
+
+            }
+                return dtRetVal;
+
         }
 
     }

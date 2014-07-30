@@ -35,7 +35,7 @@ function BindDropDown(selector, data, dataMember, valueMember) {
 
 // Show failure messages
 function FailureCall(xhr, msg, exception) {
-    alert(msg);
+    //alert(msg);
 }
 
 // On success ajax call bind the drop down data

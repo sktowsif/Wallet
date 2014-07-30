@@ -117,11 +117,16 @@
                         <div>
                             <button id="btn_logout" class="waves-effect waves-button waves-light waves-float" style="background: #488AC7;color: #fff;">Log out</button> 
                         </div>
+<<<<<<< HEAD
+                        <h1>Home</h1>
+                        <p>Welcome Towsif Hossain,</p>
+                        <p>Show the current balance and expenditure</p>
+=======
                         <h1>Welcome</h1>
                         <p><label id="lblName"></label></p>
                         <p >Your current balance is : $ <label id="lblBalance" style="color:green"></label></p>
                             <p>Click Below to Download Total Details of Income and Expense in Excel Format</p>
-                        
+>>>>>>> c3d5c19b46e040bef4d29e7de3a485fcb576a83c
                         <div>
                             <button id="btn_export" class="waves-effect waves-button waves-light waves-float" style="background: #488AC7;color: #fff;">Export</button> 
                         </div>
@@ -209,6 +214,19 @@
             </div>
         </article>
 
+<<<<<<< HEAD
     </div>
+=======
+        </div>
+    </form>
+    <div class="center">
+        <p style="color:white">© 2014 Money Tracker, Inc. All Rights Reserved. Privacy Policy/ Privacy Rights Terms of Use</p>
+    </div>
+    <div class="social">
+      <a href="http://www.facebook.com"><img src="../Image/facebook.png" /></a>
+      <a href="http://www.linkedin.com"><img src="../Image/linkedin.png" /></a>
+      <a href="http://www.twitter.com"><img src="../Image/twitter.png" /></a>
+        </div>
+>>>>>>> c3d5c19b46e040bef4d29e7de3a485fcb576a83c
 </body>
 </html>

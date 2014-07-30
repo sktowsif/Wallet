@@ -10,7 +10,7 @@
     ajaxCaller("Helper.asmx/GetBalance","{intId:"+userID+"}", SuccessBal, FailureCall);
     ajaxCaller("Helper.asmx/GetAllIncome", "{}", SuccessCall, FailureCall);
     ajaxCaller("Helper.asmx/GetAllExpense", "{}", SuccessCallExp, FailureCall);
-
+    
     $("#btn_addIncome").click(function () {
         var incAmount = $('#txt_amtIncome').val()
         if ($.isNumeric(incAmount) && incAmount!=0.00) {
@@ -71,7 +71,7 @@ function ShowNotification() {
 // To generate noty messages
 function ShowMessage() {
     var n = noty({
-        text: 'Your data hav been saved successfully.',
+        text: 'Your data have been saved successfully.',
         type: 'information',
         timeout: 3000,
     })

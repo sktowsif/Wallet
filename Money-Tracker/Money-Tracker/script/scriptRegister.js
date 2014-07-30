@@ -5,7 +5,7 @@
 
     // button register action
     $('#btn_register').click(function () {
-        GetUserDetails();
+        Validations();
     });
 })
 
@@ -22,8 +22,59 @@ function ajaxCall(url, dataToSend, SuccessCallBack, ErrorCallBack) {
         error: ErrorCallBack
     });
 }
+function ShowMessage(msg, type) {
+    var n = noty({
+        text: msg,
+        type: type,
+        timeout: 3000,
+    })
+}
+function Validations() {
+    var checkValidation = true;
+    var email = $('#txt_email').val();
+    var pwd = $('#txt_pwd').val();
+    var conPwd = $('#txt_conpwd').val();
+    var name = $("#txt_name").val();
+    var male = $("#rdoMale").val();
+    var female = $("#rdoFemale").val();
 
-// Called whr=en error is encountered by ajax call
+    if ($.trim(name).length == 0)
+    {
+        ShowMessage('Please Enter your Name', 'error');
+        checkValidation = false;
+        return;
+    }
+    if ($.trim(email).length == 0)
+    {
+        ShowMessage('Please Enter your Email', 'error');
+        checkValidation = false;
+        return;
+    }
+    if ($.trim(pwd).length == 0) {
+        ShowMessage('Please Enter Password', 'error');
+        checkValidation = false;
+        return;
+    }
+    if ($.trim(pwd)!=$.trim(conPwd)) {
+        ShowMessage('Password and Conform Password must Match', 'error');
+        checkValidation = false;
+        return;
+    }
+    if ($('input[name=gender]:checked').length <= 0) {
+        ShowMessage('Please Select Gender', 'error');
+        checkValidation = false;
+        return;
+    }
+    if ($("#ddlCountry").val() == -1)
+    {
+        ShowMessage('Please Select Country', 'error');
+        checkValidation = false;
+        return;
+    }
+    if (checkValidation)
+        GetUserDetails();
+};
+// Called when error is encountered by ajax call
 function ErrorCallBack(xhr,msg,exception) {
     alert(msg);
 }

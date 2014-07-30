@@ -1,0 +1,41 @@
+﻿body {
+    background-color:#e74c3c;
+    margin: 25px;
+}
+
+.Main-Div {
+    background-color: white;
+    height: 488px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.logo {
+    float: left;
+    margin: 20px;
+}
+
+.spanClass {
+    padding: 102px;
+}
+
+.center {
+    text-align: center;
+    margin: 20px;
+    color: white;
+}
+
+.social {
+    float:right;
+}
+.divImg {
+    float:left;
+}
+.divHead {
+    float:left;
+    margin-left:267px;
+}
+.divLog {
+    float:left;
+    margin-left:160px;
+}
