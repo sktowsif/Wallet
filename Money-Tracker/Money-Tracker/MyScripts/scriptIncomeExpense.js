@@ -51,7 +51,7 @@ function FailureCall(xhr, msg, exception) {
 
 function SuccessBal(data)
 {
-    $("#lblBalance").text(data.d);
+    $("#lblBal").text(data.d);
 }
 
 function ShowNotification() {
@@ -118,7 +118,4 @@ function ResetIncomeExpense() {
     $("#txt_noteIncome").val('Type here');
     $('#txt_amtIncome').val('0.00');
     $("#txt_noteIncome").val('Type here');
-}
-function SuccessBalance() {
-    
 }

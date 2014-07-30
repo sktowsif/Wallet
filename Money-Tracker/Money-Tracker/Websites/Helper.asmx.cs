@@ -161,9 +161,9 @@ namespace Money_Tracker.Websites
         public void ExportToXL(int intId)
         {
             ExportToXL objExport = new ExportToXL();
-            objExport.Export(intId);
-            //MainPage objMainPage = new MainPage();
-            //objMainPage.Download(intRandom);
+            int intRandom=objExport.Export(intId);
+            MainPage objMainPage = new MainPage();
+            objMainPage.Download(intRandom);
         }
 
         [WebMethod]

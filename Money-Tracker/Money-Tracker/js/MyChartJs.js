@@ -2,31 +2,28 @@
     var userID = $.session.get('userID');
     if (typeof userID == 'undefined') {
         window.location.replace("Home.aspx");
-        return false;
+        return;
     }
-    $("#hfUserId").val(userID);
     ajaxCaller("Helper.asmx/GetYears", "{}", SuccessCallYears, FailureCall);
     $("#sltYear").change(function () {
         ajaxCaller("Helper.asmx/GetMonths", "{}", SuccessMonth, FailureCall);
     });
-    //ajaxCaller("Helper.asmx/GetIncome", "{Id:" + userID + "}", SuccessCallAll, FailureCall);
+    ajaxCaller("Helper.asmx/GetIncome", "{Id:" + userID + "}", SuccessCallAll, FailureCall);
     $("#sltMonth").change(function () {
         ajaxCaller("Helper.asmx/GetWeeks", "{}", SuccessCallWeeks, FailureCall);
     });
 
     $('#btn_year').click(function () {
         ajaxCaller("Helper.asmx/GetYearData", "{intId:" + userID + ",intYear:" + $("#sltYear option:selected").text() + "}", SuccessCallY, FailureCall);
-        return false;
     });
 
     $('#btn_month').click(function () {
         ajaxCaller("Helper.asmx/GetSelectedMonth", "{intId:" + userID + ",intYear:" + $("#sltYear option:selected").text() + ",intMonth:" + $("#sltMonth option:selected").val() + "}", SuccessCallM, FailureCall);
-        return false;
     });
 
     $('#btn_week').click(function () {
         ajaxCaller("Helper.asmx/GetWeekData", "{intId:" + userID + ",intYear:" + $("#sltYear option:selected").text() + ",intMonth:" + $("#sltMonth option:selected").val() + ",intWeekNumber:" + $("#sltWeek option:selected").val() + "}", SuccessCallW, FailureCall);
-        return false;
+
     });
     
 });
@@ -41,7 +38,7 @@ function SuccessCallM(data) {
     var y = "Amount in $";
     var Name = "Total Month Income and Expenditure";
     Chart(value, day, x, y, Name);
-    return false;
+
 }
 function SuccessCallWeeks(data){
     var Type = data.d;
@@ -152,7 +149,6 @@ function Chart(data,day,x,y,Name) {
         },
     }
     var plot1 = $.jqplot('Inc', [IncomeArray, ExpArray], options);
-    return false;
 }
 function SuccessCallAll(data) {
     var value = data;
